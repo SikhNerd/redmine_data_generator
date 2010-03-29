@@ -4,21 +4,35 @@ The Redmine Data Generator plugin is used to quickly generate a bunch of data fo
 
 == Features
 
-* TODO
+* Randomly generates data for Redmine
+* Creates random users, projects, issues, and time entries (selectively) 
 
 == Getting the plugin
 
-A copy of the plugin can be downloaded from {Little Stream Software}[https://projects.littlestreamsoftware.com/projects/redmine-misc/files] or from {GitHub}[http://github.com/edavis10/redmine-misc]
+A copy of the plugin can be downloaded from {Little Stream Software}[https://projects.littlestreamsoftware.com/projects/redmine-misc/files] or from {GitHub}[http://github.com/edavis10/redmine_data_generator]
 
 == Installation and Setup
 
-1. Install the TODO gem: +sudo gem install +
-2. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins  Make sure the plugin is installed to +vendor/plugins/redmine_kanban+
-3. TODO
+1. Install the rspec, faker, and random_data gems: +sudo gem install +
+2. Follow the Redmine plugin installation steps at: http://www.redmine.org/wiki/redmine/Plugins  Make sure the plugin is installed to vendor/plugins/redmine_data_generator/
+3. Restart your Redmine web servers (e.g. mongrel, thin, mod_rails) 
 
 == Usage
 
-TODO
+rake data_generator:all
+    Generates random data for all supported datatypes
+
+rake data_generator:issues
+    Generate random issues.  Default: 100, override with COUNT=x
+
+rake data_generator:projects
+    Generate random projects.  Default: 5, override with COUNT=x
+
+rake data_generator:time_entries
+    Generate random time entries.  Default: 100, override with COUNT=x
+
+rake data_generator:users
+    Generate random users.  Default: 5, override with COUNT=x
 
 == License
 
